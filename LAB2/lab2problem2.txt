@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+
+int main()
+{
+int a,b,c ;
+int x1,x2 ;
+int z;
+clrscr();
+
+printf("Enter the value of a:");
+scanf("%d" ,&a );
+
+printf("Enter the value of b:");
+scanf("%d",&b);
+
+printf("Enter the value of c:");
+scanf("%d",&c);
+
+z=((b*b)-4*a*c) ;
+if (z==0)
+{
+x1=x2=(-b/2*a) ;
+printf("the value of x1 is %d ",x1);
+printf("the value of x2 is %d" ,x2);
+}
+
+if(z<0)
+{printf("the result is imagionary");
+}
+
+if (z>0)
+{
+x1=(-b+sqrt(z)/2*a);
+x2=(-b+sqrt(z)/2*a);
+printf("the value of x1 is %d" ,x1);
+printf("the value of x2 is %d" ,x2);
+}
+getch();
+return 0;
+}

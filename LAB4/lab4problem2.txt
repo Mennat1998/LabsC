@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<conio.h>
+int getpower(int base,int power);
+
+int main()
+{ int val ;
+  int base ;
+  int power ;
+clrscr();
+
+printf("Base=");
+scanf("%d",&base);
+
+printf("Power=");
+scanf("%d",&power);
+
+if (power<1)
+{printf("please enter postive value for power:");
+scanf("%d",&power);
+}
+val=getpower(base,power);
+
+printf("the result = %d",val);
+getch();
+return 0;
+}
+
+int getpower(int base ,int power)
+{
+  int result ;
+  if (power>0)
+{result=(base)*getpower(base,power-1);}
+ else
+ {result=1;}
+
+return result ;
+}

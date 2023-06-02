@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+char ch ;
+int row=1;
+int col=1;
+int x ;
+
+clrscr();
+printf("File\nEdit\nPrint\nExit");
+gotoxy(col,row);
+
+
+do
+{
+ch=getch();
+
+if(ch==0);
+{
+ch=getch() ;
+//printf("Extended Key with code =%d ", ch);
+
+switch(ch)
+{
+case 80 :  //down arrow
+row++ ;
+if(row>4)
+{row=1;}
+gotoxy(col,row);
+break ;
+case 72 :    //up arrow
+row-- ;
+if(row<1)
+{row=4;}
+gotoxy(col,row);
+break;
+case 79 :       //end
+gotoxy(1,4);
+break;
+case 71 :       //home
+gotoxy(1,1);
+break;
+}
+}
+
+if(ch!=0)
+{
+//printf("normal key with code =%d ",ch);
+switch(ch){
+case 13 :     //enter
+if(row==1)
+{gotoxy(10,row);
+printf("File is pressed");}
+if(row==2)
+{gotoxy(10,row);
+printf("Edit is pressed");}
+if(row==3)
+{gotoxy(10,row);
+printf("Print is pressed");}
+if(row==4)
+ch=27;     //EXIT+Enter
+break;
+}
+}
+}
+while(ch!=27);  //escape
+
+getch();
+return 0 ;
+
+}

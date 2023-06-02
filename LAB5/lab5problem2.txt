@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+
+int main(){
+
+
+int row,col ;
+int array[3][4];
+float average=0 ;
+float avg=0;
+int sum=0 ;
+
+
+clrscr();
+for(row=0;row<3;row++){
+    for(col=0;col<4;col++)
+    {
+    printf("enter subject %d of student %d :",row+1,col+1);
+    scanf("%d",&array[row][col]);
+    }
+  }
+for(col=0 ;col<4 ;col++)
+{ sum=0;
+  for(row=0;row<3;row++)
+  {
+  sum=sum+array[row][col];
+  }
+
+  printf("sum of col %d is %d\n",col,sum);
+}
+
+for(row=0 ;row<3 ;row++)
+{ average=0;
+avg=0;
+  for(col=0;col<4;col++)
+  {
+  average=(average+array[row][col]);
+  avg=average/(4.0) ;
+
+  }
+
+  printf("average of row %d is %f\n",row,avg);
+
+}
+
+
+
+getch();
+clrscr();
+return 0;
+}

@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+struct student
+
+{
+int id ;
+char name[20] ;
+int grade[3];
+};
+
+
+struct student fillstd(void);
+void printstd(struct student s);
+
+
+struct student fillstd(void)
+{
+struct student s ;
+int i ;
+
+printf("Enter ID:");
+scanf("%d",&s.id);
+printf("\n");
+
+printf("Enter name:");
+scanf("%s",s.name);
+printf("\n");
+
+for(i=0 ;i<3 ; i++)
+{
+
+printf("Enter grade %d:",i+1);
+scanf("%d",&s.grade[i]);
+printf("\n");
+}
+
+return s ;
+}
+
+void printstd(struct student s)
+{
+int i ;
+printf("ID: %d",s.id);
+printf("\n");
+printf("name: %s",s.name);
+printf("\n");
+for(i=0 ;i<3 ; i++)
+{
+printf("Enter grade%d: %d ",i+1,s.grade[i]);
+printf("\n");
+}
+}
+
+int main()
+{ int i ;
+struct student std[3] ;
+for(i=0 ; i<3 ; i++)
+{
+std[i]=fillstd();
+printstd(std[i]);
+printf("\n");
+}
+
+
+getch();
+clrscr();
+return 0 ;
+
+
+}

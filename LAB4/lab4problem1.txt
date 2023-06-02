@@ -1,0 +1,137 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+void MENU (void);
+int Add (int x , int y);
+int Subtract(int x, int y);
+void Multiply (void);
+void divide(int x,int y);
+
+int main()
+{ int row=1 ;
+  int col=1;
+  int ch ;
+
+  MENU();
+
+  gotoxy(col,row);
+
+
+do{
+ch=getch();
+if(ch==0)
+{ ch=getch();
+switch(ch)
+{case 80: //down arrow
+row++ ;
+if(row>5)
+{row=1;}
+gotoxy(col,row);
+break;
+case 72:  //up arrow
+row-- ;
+if(row<1)
+{row=5;}
+gotoxy(col,row);
+break ;
+case 79: //END
+gotoxy(1,5);
+break ;
+case 71: //Home
+gotoxy(1,1);
+break ;
+}
+}
+if(ch!=0)
+{ switch(ch){
+ case 13 : //enter
+ if (row==1)
+ {int val ;
+  int n1=3,n2=4 ;
+ val=Add(n1,n2);
+ gotoxy(10,1);
+ printf("val=%d ",val);
+ MENU();
+ gotoxy(1,1);
+
+ }
+ if(row==2)
+ {int val ;
+  int n1=5,n2=4;
+  val=Subtract(n1,n2);
+  gotoxy(15,2);
+  printf("val=%d",val);
+  MENU();
+  gotoxy(1,2);
+ }
+ if (row==3)
+ {gotoxy(10,3);
+  Multiply();
+  MENU();
+  gotoxy(1,3);
+ }
+ if(row==4)
+{ int n1=10 ; int n2=2;
+  gotoxy(10,4);
+   divide(n1,n2);
+   MENU();
+   gotoxy(1,4);
+ }
+ if(row==5)
+ ch=27 ;
+ break ;
+}
+}
+}
+
+while(ch!=27);
+
+getch();
+return 0 ;
+}
+
+
+
+void MENU(void)
+{ getch();
+  clrscr();
+
+  printf("1)Add\n");
+  printf("2)Subtract\n");
+  printf("3)Multiply\n");
+  printf("4)Divide\n");
+  printf("5)EXIT");
+  gotoxy(1,1);
+}
+
+int Add(int x , int y)
+{  int z ;
+   z=x+y ;
+   return z ;
+}
+int Subtract(int x , int y)
+{   int z ;
+    z=x-y ;
+    return z ;
+}
+void Multiply (void)
+{ int z,x,y ;
+gotoxy(15,3);
+  printf("x=");
+  scanf("%d",&x);
+  gotoxy(20,3);
+  printf("y=");
+  scanf("%d",&y);
+  z=x*y ;
+  gotoxy(25,3);
+  printf("z= %d ",z) ;
+
+}
+void divide(int x,int y)
+{int z ;
+z=x/y ;
+gotoxy(15,4);
+printf("z= %d",z);
+gotoxy(1,4);
+}

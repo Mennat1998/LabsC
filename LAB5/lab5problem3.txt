@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+#include<STRING.H>
+
+
+int main()
+{
+
+char fname[10];
+char lname[10];
+char fullname[20];
+
+printf("Enter first name :");
+scanf("%s",fname);
+
+
+printf("Enter last name :");
+scanf("%s",lname);
+
+
+
+strcpy(fullname,fname);
+strcat(fullname, " ");
+strcat(fullname,lname);
+
+printf("Full name is:%s ",fullname);
+
+getch();
+clrscr();
+return 0;
+}
